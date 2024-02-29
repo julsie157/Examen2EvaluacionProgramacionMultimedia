@@ -62,14 +62,6 @@ class ThirdActivity : AppCompatActivity() {
             val valoracion = valoracionTextView.text.toString().toFloat()
             val empresa = empresaTextView.text.toString()
             val anio = anioTextView.text.toString().toInt()
-
-
-            if (nombre.isEmpty() || valoracion.toString().isEmpty()|| empresa.isEmpty() || anio.toString().isEmpty()){
-                Toast.makeText(this,"Los campos no pueden estar vacios",Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
-
-
             val videojuego = Videojuego(nombre,valoracion,empresa,anio)
             db.escribirVideojuego(videojuego)
             Toast.makeText(this,"El juego Se ha guardado En la base",Toast.LENGTH_SHORT).show()
